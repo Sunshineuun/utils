@@ -1,0 +1,17 @@
+SpringBoot 注解详解
+
+1. @Conditional(TestCondition.class)
+    1.1 通过TestCondition.matches鉴定是否需要创建bean;
+    1.2 TestCondition实现org.springframework.context.annotation.Condition接口
+2. @ConditionalOnBean
+    2.1 仅仅在当前上下文中存在某个Bean时，才会实例化一个Bean
+3. @ConditionalOnClass
+    3.1 某个class位于类路径上，才会实例化一个Bean
+4. @ConditionalOnExpression
+    4.1 当表达式为true的时候，才会实例化一个Bean
+5. @ConditionalOnMissingBean
+    5.1 仅仅在当前上下文中不存在某个对象时，才会实例化一个Bean
+6. @ConditionalOnMissingClass
+    6.1 某个class类路径上不存在的时候，才会实例化一个Bean
+7. @ConditionalOnNotWebApplication
+    7.1 不是web应用

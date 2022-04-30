@@ -1,0 +1,20 @@
+1. SpringApplicationRunListener(Spring应用程序运行侦听器)，位置SpringApplication[406]
+    1.1 EventPublishingRunListener
+    1.2 扫描的过程
+        1.2.1 
+2. ApplicationContextInitializer(应用程序上下文初始化)，位置SpringApplication[266]；
+    2.1 DelegatingApplicationContextInitializer
+    2.2 ContextIdApplicationContextInitializer
+    2.3 RestartScopeInitializer
+    2.4 ConfigurationWarningsApplicationContextInitializer
+    2.5 ServerPortInfoApplicationContextInitializer
+    2.6 SharedMetadataReaderFactoryContextInitializer
+    2.7 ConditonEvaluationReportLoggingListener
+3. ApplicationListener(应用程序侦听器)，位置SpringApplication[274]
+    
+4. 广播事件的过程(SimpleApplicationEventMulticaster.multicastEvent)
+    4.1 获取所有的监听器，轮询将事件传递给监听器。
+    4.2 监听器调用onApplicationEvent方法，根据事件选择执行的代码
+
+5. META-INF/spring.factories的作用，SpringFactoriesLoader.loadFactories。
+    主要用户加载配置类。

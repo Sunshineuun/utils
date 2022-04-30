@@ -1,0 +1,25 @@
+
+MyBatis-Spring-Boot-Starter will:
+
+Autodetect an existing DataSource.
+自动检测现有的数据源。
+
+Will create and register an instance of a SqlSessionFactory passing that DataSource as an input using the SqlSessionFactoryBean.
+将创建并注册一个SqlSessionFactory实例，该实例将使用SqlSessionFactoryBean作为输入传递数据源。
+
+Will create and register an instance of a SqlSessionTemplate got out of the SqlSessionFactory.
+将创建并注册一个SqlSessionTemplate实例，从SqlSessionFactory中退出。
+
+Autoscan your mappers, link them to the SqlSessionTemplate and register them to Spring context so they can be injected into your beans.
+自动扫描您的mappers，将它们链接到SqlSessionTemplate并将它们注册到Spring上下文，这样它们就可以被注入到您的bean中。
+
+
+Property	Description
+config-location	Location of MyBatis xml config file.
+check-config-location	Indicates whether perform presence check of the MyBatis xml config file.
+mapper-locations	Locations of Mapper xml config file.
+type-aliases-package	Packages to search for type aliases. (Package delimiters are ",; \t\n")
+type-handlers-package	Packages to search for type handlers. (Package delimiters are ",; \t\n")
+executor-type	Executor type: SIMPLE, REUSE, BATCH.
+configuration-properties	Externalized properties for MyBatis configuration. Specified properties can be used as placeholder on MyBatis config file and Mapper file. For detail see the MyBatis reference page
+configuration	A MyBatis Configuration bean. About available properties see the MyBatis reference page. NOTE This property cannot be used at the same time with the config-location.

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: utils
+logging:
+  level:
+    root: info
+  config: classpath:logback-config.xml
+  file:
+    path: /tmp/logs
