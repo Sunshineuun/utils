@@ -1,0 +1,90 @@
+# ES 删除模板 logstash 是模板的名称
+DELETE http://localhost:9200/_template/luyun-template
+
+<> 2022-05-24T173512.200.json
+<> 2022-05-24T164932.200.json
+
+###
+# 查询模板
+GET http://localhost:9200/_template/luyun-template
+
+<> 2022-05-24T185240.200.json
+<> 2022-05-24T182927.200.json
+<> 2022-05-24T182336.200.json
+<> 2022-05-24T182327.404.json
+<> 2022-05-24T182314.404.json
+<> 2022-05-24T173517.404.json
+<> 2022-05-24T173430.200.json
+<> 2022-05-24T172510.404.json
+<> 2022-05-24T172449.200.json
+
+###
+# 创建模板
+PUT http://localhost:9200/_template/luyun-template
+Content-Type: application/json
+
+{
+  "index_patterns": "luyun-*",
+  "order": 0,
+  "settings": {
+    "index": {
+      "refresh_interval": "5s"
+    }
+  },
+  "mappings": {
+    "properties": {
+      "@timestamp": {
+        "type": "date"
+      },
+      "app_name": {
+        "type": "keyword"
+      },
+      "pid": {
+        "type": "keyword"
+      },
+      "ip": {
+        "type": "keyword"
+      },
+      "level": {
+        "type": "keyword"
+      },
+      "line": {
+        "type": "keyword"
+      },
+      "thread": {
+        "type": "keyword"
+      },
+      "class": {
+        "type": "text",
+        "index": true,
+        "analyzer": "std_english"
+      },
+      "msg": {
+        "type": "text",
+        "index": true
+      },
+      "stack_trace": {
+        "type": "text",
+        "index": true
+      },
+      "traceId": {
+        "type": "text",
+        "index": true
+      },
+      "@version": {
+        "index": false,
+        "type": "keyword"
+      }
+    }
+  },
+  "aliases": {}
+}
+
+<> 2022-05-24T185243.400.json
+<> 2022-05-24T182332.200.json
+<> 2022-05-24T173408.200.json
+<> 2022-05-24T173355.400.json
+<> 2022-05-24T173034.400.json
+<> 2022-05-24T172957.400.json
+
+
