@@ -7,9 +7,8 @@ logging:
   config: classpath:logback-config.xml
   file:
     path: /tmp/logs
-
-elk:
-  logstash:
-    print:
-      enable: 1
-    host: localhost:8065
+qiusm:
+  web:
+    config:
+      logstash:
+        enable: 1
